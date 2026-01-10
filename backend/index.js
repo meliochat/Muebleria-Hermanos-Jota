@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import productosRoutes from './routes/productos.js';
 
 dotenv.config(); //lee el archivo .env y carga las variables de entorno
 const app = express();
@@ -20,6 +21,8 @@ if(process.env.MONGO_URI){
 } else {
     console.error('MONGO_URI no está definido en las variables de entorno');
 }
+
+app.use('/api/productos', productosRoutes);
 
 app.get('/', (req, res) => {
     res.send('API de Mueblería Hermanos Jota funcionando');
