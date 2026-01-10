@@ -1,68 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIABLES DE MARCA */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Paleta Principal */
+  --color-siena: #A0522D;       /* Primario / Logo */
+  --color-salvia: #87A96B;      /* Acentos / Sustentabilidad */
+  --color-alabastro: #F5E6D3;   /* Fondos Claros */
+  --color-dorado: #D4A437;      /* Detalles Premium */
+  --color-rosa: #C47A6D;        /* Acentos Suaves */
+  
+  /* Neutros */
+  --color-texto: #2C2C2C;       /* Casi negro para lectura */
+  --color-fondo: #FFFCF9;       /* Un blanco rotito, más cálido que #FFF */
+  --color-blanco: #FFFFFF;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  /* Tipografías */
+  --font-titulo: 'Playfair Display', serif;
+  --font-cuerpo: 'Inter', sans-serif;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: var(--font-cuerpo);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1, h2, h3, h4 {
+  font-family: var(--font-titulo);
+  color: var(--color-siena); /* Los títulos van en el color de la marca */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
