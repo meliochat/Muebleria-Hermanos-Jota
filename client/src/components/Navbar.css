@@ -61,3 +61,33 @@
 .navbar-logo-img:hover{
     transform: scale(1.05);
 }
+
+.nav-cart {
+    color: var(--color-texto);
+    display: flex;
+    align-items: center;
+    position: relative; 
+    transition: color 0.3s ease;
+}
+
+.nav-cart:hover {
+    color: var(--color-siena); 
+}
+
+/* El numerito rojo flotante */
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--color-siena);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white; 
+}

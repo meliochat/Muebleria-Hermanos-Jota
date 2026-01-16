@@ -15,7 +15,7 @@ const ProductCard = ({ producto }) => {
                 <h3 className="card-title">{producto.nombre}</h3>
                 <p className="card-category">{producto.categoria}</p>
                 <p className="card-price">{producto.precio.toLocaleString()}</p>
-                <Link to={`/productos/${producto.id}`} className="card-button">Ver Detalles</Link>
+                <Link to={`/productos/${producto._id}`} className="card-button">Ver Detalles</Link>
             </div>
         </div>
     );
