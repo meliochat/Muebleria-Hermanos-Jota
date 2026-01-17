@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import axios from 'axios';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
     const { id } = useParams();
+    const { addToCart } = useCart();
     const [producto, setProducto] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -42,7 +44,15 @@ const ProductDetail = () => {
                     </div>
                     <div className="detail-price-box">
                         <span className="detail-price">$ {producto.precio.toLocaleString()}</span>
-                        <button className="btn-add-cart">Añadir al Carrito</button>
+                        <button 
+                        className="btn-add-cart"
+                        onClick={() => {
+                            addToCart(producto);
+                            alert("¡Producto agregado!");
+                        }}
+                        >
+                            Agregar al Carrito
+                        </button>
                     </div>
                 </div>
                 <div className="detail-image-box">

@@ -1,7 +1,8 @@
 import { createContext, useState, useContext, useEffect } from 'react';
 
+// 1. Creamos el contexto (la "nube" donde vivirán los datos)
 const CartContext = createContext();
-export const CartProvidor = ({ children }) => {
+    export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState(() => {
         const savedCart = localStorage.getItem('cart');
         return savedCart ? JSON.parse(savedCart) : [];
@@ -13,16 +14,17 @@ export const CartProvidor = ({ children }) => {
 
     const addToCart = (product, quantity = 1) => {
         setCart(prevCart => {
-            const existingProduct = SVGAnimatedPreserveAspectRatio.find(item => item._id === product._id);
-            if (existingProduct){
-                return prevCart.map(item =>
-                    item._id === product._id
-                    ? { ...item, quantity: item.quantity + quantity }
-                    : item
-                );
-            } else {
-                return [...prevCart, { ...product, quantity }];
-            }
+        const existingProduct = prevCart.find(item => item._id === product._id);
+
+        if (existingProduct) {
+            return prevCart.map(item =>
+            item._id === product._id
+                ? { ...item, quantity: item.quantity + quantity }
+                : item
+            );
+        } else {
+            return [...prevCart, { ...product, quantity }];
+        }
         });
     };
 
@@ -35,17 +37,18 @@ export const CartProvidor = ({ children }) => {
     const totalPrice = cart.reduce((acc, item) => acc + (item.precio * item.quantity), 0);
 
     return (
-        <CartContext.Provider value={{
-            cart,
-            addToCart,
-            removeFromCart,
-            clearCart,
-            totalItems,
-            totalPrice
+        <CartContext.Provider value={{ 
+        cart, 
+        addToCart, 
+        removeFromCart, 
+        clearCart, 
+        totalItems, 
+        totalPrice 
         }}>
-            {children}
+        {children}
         </CartContext.Provider>
     );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => useContext(CartContext);
