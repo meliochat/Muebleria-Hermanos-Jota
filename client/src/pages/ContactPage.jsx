@@ -1,4 +1,4 @@
-import './CartPage.css';
+import './ContactPage.css';
 
 const ContactPage = () => {
     return (
