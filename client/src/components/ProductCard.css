@@ -72,3 +72,16 @@
     background-color: var(--color-siena);
     color: white;
 }
+
+.btn-primary{
+    background-color: var(--color-siena);
+    color: white;
+    border: 1px solid var(--color-siena);
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.btn-primary:hover{
+    background-color: #8a4524;
+    color: white;
+}
