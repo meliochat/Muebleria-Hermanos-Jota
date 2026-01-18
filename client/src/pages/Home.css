@@ -1,0 +1,187 @@
+.hero-section{
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/img/Sofá-Patagonia.png');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 4rem;
+}
+
+.hero-content{
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title{
+    font-family: var(--font-titulo);
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle{
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.btn-hero{
+    background-color: white;
+    color: var(--color-siena);
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-hero:hover{
+    background-color: var(--color-siena);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.featured-section {
+    margin-bottom: 5rem;
+    position: relative; 
+}
+
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2rem;
+    padding: 0 10px;
+}
+
+.section-title {
+    font-family: var(--font-titulo);
+    color: var(--color-siena);
+    font-size: 2rem;
+}
+
+.link-view-all {
+    color: #666;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.link-view-all:hover {
+    color: var(--color-siena);
+}
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1.5rem; 
+    overflow-x: auto; 
+    scroll-behavior: smooth; 
+    padding: 10px 5px; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    }
+    .carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-card-wrapper {
+    min-width: 280px; 
+    max-width: 280px;
+    flex: 0 0 auto; 
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: 1px solid #eee;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem; 
+    color: var(--color-siena);
+    transition: all 0.3s ease;
+    padding-bottom: 5px; 
+}
+
+.carousel-btn:hover {
+    background-color: var(--color-siena);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.btn-left {
+    left: -20px; 
+}
+
+.btn-right {
+    right: -20px; 
+}
+
+.btn-secondary{
+    color: var(--color-texto);
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.btn-secondary:hover{
+    color: var(--color-siena);
+}
+
+.benefits-section{
+    background-color: var(--color-alabastro);
+    padding: 4rem 20px;
+    text-align: center;
+}
+
+.benefits-grid{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.benefit-item h3{
+    color: var(--color-siena);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-titulo);
+}
+
+.benefit-item p{
+    color: #666;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px){
+    .hero-title{
+        font-size: 2.5rem;
+    }
+    .benefits-grid{
+        flex-direction: column;
+    }
+    .carousel-btn {
+        display: none;
+    }
+}
