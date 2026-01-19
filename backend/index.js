@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import productosRoutes from './routes/productos.js';
+import authRoutes from './routes/auth.js';
 
 dotenv.config(); //lee el archivo .env y carga las variables de entorno
 const app = express();
@@ -27,6 +28,9 @@ app.use('/api/productos', productosRoutes);
 app.get('/', (req, res) => {
     res.send('API de Mueblería Hermanos Jota funcionando');
 });
+
+app.use('/api/productos', productosRoutes);
+app.use('/api/auth', authRoutes);
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);
