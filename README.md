@@ -2,9 +2,6 @@
 
 > Una plataforma web moderna para la gestión y venta de muebles de diseño, construida con el stack MERN (MongoDB, Express, React, Node.js).
 
-![Preview del Proyecto](https://via.placeholder.com/800x400?text=Captura+de+Pantalla+del+Home)
-*(¡Aquí subiremos una captura real de tu Home después!)*
-
 ## Descripción
 
 Este proyecto es una solución completa de comercio electrónico desarrollada para "Hermanos Jota", una mueblería de diseño minimalista. La aplicación permite a los usuarios explorar un catálogo dinámico, gestionar un carrito de compras persistente, registrarse/autenticarse de forma segura y generar órdenes de compra que se registran en tiempo real en la base de datos.
