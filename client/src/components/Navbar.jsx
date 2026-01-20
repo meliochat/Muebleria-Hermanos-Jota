@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import '../components/Navbar.css';
 
 const Navbar = () => {
     const { totalItems } = useCart();
+    const { user, logout } = useAuth();
 
     return (
         <nav className="navbar">
@@ -43,7 +45,14 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/login" className="nav-link btn-login">Inicio Sesión</Link>
+                        {user ? (
+                            <div className="user-menu">
+                                <span className="user-name">Hola, {user.nombre}</span>
+                                <button onClick={logout} className="btn-logout">Salir</button>
+                            </div>
+                        ) : (
+                            <Link to="/login" className="nav-link btn-login">Inicio Sesión</Link>
+                        )}
                     </li>
                 </ul>
             </div>

@@ -48,7 +48,6 @@ const ProductDetail = () => {
                         className="btn-add-cart"
                         onClick={() => {
                             addToCart(producto);
-                            alert("¡Producto agregado!");
                         }}
                         >
                             Agregar al Carrito
