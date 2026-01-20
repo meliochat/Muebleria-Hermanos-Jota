@@ -104,18 +104,22 @@
     font-size: 0.9rem;
 }
 
-.bnt-logout{
-    background: none;
-    border: 1px solid #ddd;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
+.btn-logout {
+    background-color: white;
+    border: 1px solid var(--color-siena);
+    color: var(--color-siena);
+    padding: 6px 18px;
+    border-radius: 20px; 
     font-size: 0.8rem;
-    color: #666;
-    transition: all 0.3s;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.btn-logout:hover{
-    background-color: #f0f0f0;
-    color: #333;
+.btn-logout:hover {
+    background-color: var(--color-siena);
+    color: white;
+    transform: translateY(-1px); 
 }

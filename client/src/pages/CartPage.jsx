@@ -1,9 +1,42 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
+import axios from 'axios';
 import './CartPage.css';
 
 const CartPage = () => {
     const { cart, removeFromCart, addToCart, clearCart, totalPrice } = useCart();
+    const { user } = useAuth();
+    const navigate = useNavigate();
+
+    const handleCheckout = async () => {
+        if (!user) {
+            alert("Por favor, inicia sesión para finalizar tu compra.");
+            navigate('/login');
+            return;
+        }
+
+        try {
+            const itemsParaBackend = cart.map(item => ({
+                producto: item,
+                cantidad: item.quantity 
+            }));
+
+            await axios.post('http://localhost:5000/api/ordenes', {
+                usuarioId: user._id,
+                items: itemsParaBackend, 
+                total: totalPrice
+            });
+
+            clearCart();
+            alert("¡Gracias por tu compra! Tu pedido ha sido registrado.");
+            navigate('/');
+        } catch (error) {
+            console.error(error);
+            alert("Hubo un error al procesar tu pedido.");
+        }
+    };
+
     if (cart.length === 0) {
         return (
         <div className="empty-cart-container container">
@@ -84,9 +117,7 @@ const CartPage = () => {
                 <span>$ {totalPrice.toLocaleString()}</span>
             </div>
 
-            <Link to="/login" className="btn-checkout">
-                Finalizar Compra
-            </Link>
+            <button onClick={handleCheckout} className="btn-checkout">Finalizar Compra</button>
             </div>
         </div>
         </div>

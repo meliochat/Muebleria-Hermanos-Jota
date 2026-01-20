@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import productosRoutes from './routes/productos.js';
 import authRoutes from './routes/auth.js';
+import ordenesRoutes from './routes/ordenes.js';
 
 dotenv.config(); //lee el archivo .env y carga las variables de entorno
 const app = express();
@@ -31,6 +32,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/productos', productosRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/ordenes', ordenesRoutes);
 
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);

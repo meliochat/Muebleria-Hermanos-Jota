@@ -44,7 +44,7 @@ const RegisterPage = () => {
                         value={formData.nombre}
                         onChange={handleChange} 
                         required 
-                        placeholder="Ej: Melina Jota"
+                        placeholder="Ej: Jane Doe"
                         />
                     </div>
                     
