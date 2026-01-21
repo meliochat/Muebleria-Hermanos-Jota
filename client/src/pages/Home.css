@@ -174,14 +174,57 @@
     font-size: 0.9rem;
 }
 
-@media (max-width: 768px){
-    .hero-title{
-        font-size: 2.5rem;
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.2;
     }
-    .benefits-grid{
-        flex-direction: column;
+
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
     }
+
+    .section-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
     .carousel-btn {
-        display: none;
+        display: none; 
+    }
+
+    .carousel-track {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        width: 100%;
+        gap: 15px;
+        padding: 10px 5px 20px 5px;
+        justify-content: flex-start; 
+    }
+
+    .carousel-card-wrapper {
+        min-width: 260px;
+        flex-shrink: 0;  
+    }
+
+    .carousel-track::-webkit-scrollbar {
+        height: 4px;
+    }
+    .carousel-track::-webkit-scrollbar-thumb {
+        background-color: #ddd;
+        border-radius: 4px;
+    }
+
+    .benefits-grid {
+        display: flex;
+        flex-direction: column; 
+        gap: 30px;
+    }
+
+    .benefit-item {
+        text-align: center;
+        padding: 0 20px;
     }
 }
