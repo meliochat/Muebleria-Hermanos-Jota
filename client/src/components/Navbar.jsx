@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import logoImg from '../assets/logo.svg';
 import '../components/Navbar.css';
 
 const Navbar = () => {
@@ -11,7 +12,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="navbar-container container">
                 <Link to="/" className="navbar-logo-container">
-                    <img src="./public/img/logo.svg" alt="Logo Hermanos Jota" className="navbar-logo-img" />
+                    <img src={logoImg} alt="Logo Hermanos Jota" className="navbar-logo-img" />
                 </Link>
 
                 <ul className="nav-menu">
