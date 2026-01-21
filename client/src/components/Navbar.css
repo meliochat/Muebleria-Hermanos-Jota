@@ -9,16 +9,36 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.navbar-container{
+.navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: 0 20px; 
+}
+
+.navbar-logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+.navbar-logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo-img:hover {
+    transform: scale(1.05);
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
+    list-style: none; 
     gap: 2rem;
 }
 
@@ -26,6 +46,7 @@
     color: var(--color-texto);
     font-weight: 500;
     font-size: 0.95rem;
+    text-decoration: none; 
     transition: color 0.3s ease;
 }
 
@@ -33,7 +54,7 @@
     color: var(--color-siena);
 }
 
-.btn-login{
+.btn-login {
     background-color: var(--color-siena);
     color: white !important;
     padding: 8px 20px;
@@ -41,40 +62,22 @@
     transition: background-color 0.3s ease;
 }
 
-.btn-login:hover{
+.btn-login:hover {
     background-color: #8a4524;
-}
-
-.navbar-logo-container{
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.navbar-logo-img{
-    height: 50px;
-    width: auto;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.navbar-logo-img:hover{
-    transform: scale(1.05);
 }
 
 .nav-cart {
     color: var(--color-texto);
     display: flex;
     align-items: center;
-    position: relative; 
+    position: relative;
     transition: color 0.3s ease;
 }
 
 .nav-cart:hover {
-    color: var(--color-siena); 
+    color: var(--color-siena);
 }
 
-/* El numerito rojo flotante */
 .cart-badge {
     position: absolute;
     top: -8px;
@@ -85,20 +88,20 @@
     font-weight: 700;
     width: 18px;
     height: 18px;
-    border-radius: 50%; 
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid white; 
+    border: 2px solid white;
 }
 
-.user-menu{
+.user-menu {
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.user-name{
+.user-name {
     color: var(--color-siena);
     font-weight: 600;
     font-size: 0.9rem;
@@ -109,7 +112,7 @@
     border: 1px solid var(--color-siena);
     color: var(--color-siena);
     padding: 6px 18px;
-    border-radius: 20px; 
+    border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
@@ -121,5 +124,64 @@
 .btn-logout:hover {
     background-color: var(--color-siena);
     color: white;
-    transform: translateY(-1px); 
+    transform: translateY(-1px);
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    color: var(--color-texto);
+}
+
+@media screen and (max-width: 960px) {
+    
+    .navbar-container {
+        position: relative;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-right: 10px;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 80px); 
+        position: absolute;
+        top: 80px; 
+        left: -100%; 
+        opacity: 0;
+        transition: all 0.5s ease;
+        background-color: var(--color-blanco);
+        align-items: center; 
+        justify-content: flex-start;
+        padding-top: 30px;
+        gap: 30px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-link {
+        font-size: 1.2rem; 
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 10px 0;
+    }
+
+    .user-menu {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .btn-logout {
+        width: 100%;
+    }
 }
