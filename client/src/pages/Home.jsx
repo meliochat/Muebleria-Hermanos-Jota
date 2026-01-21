@@ -10,7 +10,7 @@ const Home = () => {
     useEffect(() => {
         const fetchDestacados = async () => {
             try{
-                const res = await axios.get('http://localhost:5000/api/productos');
+                const res = await axios.get('https://muebleria-hermanos-jota-f52k.onrender.com/api/productos');
                 setProductosDestacados(res.data.slice(0, 4));
             } catch(error){
                 console.error("Error cargando destacados", error);

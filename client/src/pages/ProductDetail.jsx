@@ -13,7 +13,7 @@ const ProductDetail = () => {
     useEffect(() => {
         const fetchProducto = async () => {
             try{
-                const res = await axios.get(`http://localhost:5000/api/productos/${id}`);
+                const res = await axios.get(`https://muebleria-hermanos-jota-f52k.onrender.com/api/productos/${id}`);
                 setProducto(res.data);
                 setLoading(false);
             } catch(error){

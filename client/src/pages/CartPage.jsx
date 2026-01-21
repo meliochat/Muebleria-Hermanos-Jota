@@ -22,7 +22,7 @@ const CartPage = () => {
                 cantidad: item.quantity 
             }));
 
-            await axios.post('http://localhost:5000/api/ordenes', {
+            await axios.post('https://muebleria-hermanos-jota-f52k.onrender.com/api/ordenes', {
                 usuarioId: user._id,
                 items: itemsParaBackend, 
                 total: totalPrice
